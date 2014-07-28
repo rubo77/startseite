@@ -1,34 +1,35 @@
-url: http://entenhausen.freifunk.net
+url: http://ostholstein.freifunk.net
 
 community:
   # Metadata
-  name: "Entenhausen"
+  name: "Ostholstein"
 
   # Custom URLs
-  url_wiki:  "/wiki"
+  url_wiki:  "http://luebeck.freifunk.net/wiki/Ostholstein"
   url_geomap: "/map/geomap.html"
   url_graph: "/map/graph.html"
-  url_nodelist: "/wiki/Knoten"
-  url_mailman: "http://lists.entenhausen.freifunk.net/mailman/listinfo/list"
+  url_nodelist: "/map/list.html"
+  url_mailman: "http://lists.ostholstein.freifunk.net/mailman/listinfo/list"
+  url_logo: "/images/ffoh-logo.png"
 
   # Mail Contacts
-  mail_info: "info@entenhausen.freifunk.net"
-  mail_keys: "keys@entenhausen.freifunk.net"
-  mail_discussion: "discussion@entenhausen.freifunk.net"
+  mail_info: "info@ostholstein.freifunk.net"
+  mail_keys: "keys@ostholstein.freifunk.net"
+  mail_discussion: "discussion@ostholstein.freifunk.net"
 
   # Other Contacts
-  sip: ["space@sip.ffeh", "space@10.254.254.254"] # Optional
-  twitter: "FreifunkEntenhausen" # Optional
-  irc: "#ffeh"
+  #sip: ["space@sip.ffoh", "space@10.254.254.254"] # Optional
+  #twitter: "FreifunkOstholstein" # Optional
+  #irc: "#ffoh"
 
   # GPS
-  geo_lat: 53.869722
-  geo_lon: 10.686389
+  geo_lat: 54.010162934330765 
+  geo_lon: 10.79681396484375
 
 firmware:
-  base: "http://luebeck.freifunk.net/firmware/stable/"
+  base: "http://ostholstein.freifunk.net/firmware/stable/"
 
   # URL to the site repo (gitweb,github...)
-  gluon_site: "https://github.com/freifunk-entenhausen/site-ffeh"
+  gluon_site: "https://github.com/smoe/site-ffoh"
   # Path to local checkout of the site repo
   gluon_site_dir: "../gluon/site"
