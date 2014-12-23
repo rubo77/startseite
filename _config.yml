@@ -1,8 +1,10 @@
-url: http://ostholstein.freifunk.net
+url: http://ostholstein.freifunk.net/
 
 community:
   # Metadata
   name: "Ostholstein"
+  meta: "Schleswig-Holstein"
+  country: "DE"
 
   # Custom URLs
   url_wiki:  "http://luebeck.freifunk.net/wiki/Ostholstein"
@@ -28,8 +30,21 @@ community:
 
 firmware:
   base: "http://ostholstein.freifunk.net/firmware/stable/"
+  type: "gluon"
 
   # URL to the site repo (gitweb,github...)
   gluon_site: "https://github.com/smoe/site-ffoh"
   # Path to local checkout of the site repo
   gluon_site_dir: "../gluon/site"
+
+tld:
+  label: "ffoh"
+  ns:
+    - "10.135.0.8"
+    - "fd73:111:e824::1:1"
+    - "10.135.0.16"
+    - "fd73:111:e824::1:2"
+    - "10.135.0.24"
+    - "fd73:111:e824::1:3"
+    - "10.135.0.32"
+    - "fd73:111:e824::1:4"
