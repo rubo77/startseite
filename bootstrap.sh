@@ -1,6 +1,6 @@
 #!/bin/bash
 
 apt-get update
-apt-get install -y jekyll ruby-nokogiri git
+apt-get install -y ruby-nokogiri git
 
-gem install json
+gem install json jekyll
