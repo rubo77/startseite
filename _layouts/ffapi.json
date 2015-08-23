@@ -1,68 +1,74 @@
 {
-  "name": "Freifunk {{ site.community.name }}",
-  "url": "{{ site.url }}{{ site.baseurl }}",
-{% if site.community contains 'meta' %}  "metacommunity": "{{ site.community.meta }}", {% endif %}
+  "name": "Freifunk Ostholstein",
+  "url": "http://ostholstein.freifunk.net/",
+  "metacommunity": "Schleswig-Holstein", 
   "state": {
-    "nodes": 0,
-    "lastchange": {{ site.time | date_to_stamp }}
+    "nodes": 95,
+    "lastchange": "2015-03-24T10:01:34+01:00"
   },
   "location": {
-    "city": "{{ site.community.name }}",
-    "country": "{{ site.community.country }}",
-    "lat": {{ site.community.geo_lat }},
-    "lon": {{ site.community.geo_lon }}
+    "city": "Ostholstein",
+    "country": "DE",
+    "lat": 54.010162934330765,
+    "lon": 10.79681396484375
   },
   "contact": {
-    "email": "{{ site.community.mail_info }}",
-    "irc": "irc://hackint/%23{{ site.community.irc }}",
-    "ml": "{{ site.community.mail_discussion }}"
-{% if site.community contains 'sip' %}    ,"phone": "{{ site.community.sip | first }}" {% endif %}
-{% if site.community contains 'twitter' %}    ,"twitter": "@{{ site.community.twitter | first }}" {% endif %}
+    "email": "info@ostholstein.freifunk.net",
+    "ml": "discussion@luebeck.freifunk.net"
   },
   "nodeMaps": [
     {
-      "url": "{{ site.url }}{{ site.baseurl }}ffmap/geomap.html",
-      "interval": "300",
+      "url": "http://ostholstein.freifunk.net/map/geomap.html",
+      "interval": "1800",
       "technicalType": "ffmap",
       "mapType": "geographical"
     },
     {
-      "url": "{{ site.url }}{{ site.baseurl }}ffmap/graph.html",
-      "interval": "300",
+      "url": "http://ostholstein.freifunk.net/map/graph.html",
+      "interval": "1800",
       "technicalType": "ffmap",
       "mapType": "structural"
     },
     {
-      "url": "{{ site.url }}{{ site.baseurl }}ffmap/list.html",
-      "interval": "300",
+      "url": "http://ostholstein.freifunk.net/map/list.html",
+      "interval": "1800",
       "technicalType": "ffmap",
       "mapType": "list/status"
     }
   ],
   "techDetails": {
     "firmware": {
-      "url": "{{ site.url }}{{ site.baseurl }}mitmachen.html",
-      "name": "{{ site.firmware.type }}"
+      "url": "http://ostholstein.freifunk.net/mitmachen.html",
+      "name": "gluon"
     },
-{% if site contains 'tld' && site.tld contains 'label' %}    "tld": {
-      "domainname": "{{ site.tld.label }}",
-{% if site contains 'tld' && site.tld contains 'ns' %}      "nameserver": [
-        "{{ site.tld.ns }}"
-      ] {% endif %}
-    }, {% endif %}
+    "dns": [
+        {
+           "domainname": "ffoh",
+           "nameserver": [
+            "10.135.0.8",
+            "fd73:111:e824::1:1",
+            "10.135.0.16",
+            "fd73:111:e824::1:2",
+            "10.135.0.24",
+            "fd73:111:e824::1:3",
+            "10.135.0.32",
+            "fd73:111:e824::1:4"
+           ] 
+        } 
+    ],
     "networks": {
       "ipv6": [
         {
-          "network": "{{ site.gluon_site.prefix6 }}"
+          "network": "fd73:111:e824::/64"
         }
       ],
       "ipv4": [
         {
-          "network": "{{ site.gluon_site.prefix4 }}"
+          "network": "10.135.0.0/16"
         }
       ]
     },
-{% if site.community contains 'mail_keys' %}    "bootstrap": "{{ site.community.mail_keys | first }}", {% endif %}
+    "bootstrap": "", 
     "routing": [
       "batman-adv"
     ],
@@ -75,5 +81,5 @@
       "anonymizer"
     ]
   },
-  "api": "0.4.0"
+  "api": "0.4.6"
 }

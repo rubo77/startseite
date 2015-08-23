@@ -8,16 +8,16 @@ community:
 
   # Custom URLs
   url_wiki:  "http://luebeck.freifunk.net/wiki/Ostholstein"
-  url_geomap: "/map/geomap.html"
-  url_graph: "/map/graph.html"
-  url_nodelist: "/map/list.html"
+  url_geomap: "/map2"
+  url_graph: "/map2"
+  url_nodelist: "/map2"
   url_mailman: "http://lists.ostholstein.freifunk.net/mailman/listinfo/list"
   url_logo: "/images/ffoh-logo.png"
 
   # Mail Contacts
   mail_info: "info@ostholstein.freifunk.net"
   mail_keys: "keys@ostholstein.freifunk.net"
-  mail_discussion: "discussion@ostholstein.freifunk.net"
+  #mail_discussion: "discussion@ostholstein.freifunk.net"
 
   # Other Contacts
   #sip: ["space@sip.ffoh", "space@10.254.254.254"] # Optional
@@ -29,7 +29,7 @@ community:
   geo_lon: 10.79681396484375
 
 firmware:
-  base: "http://ostholstein.freifunk.net/firmware/stable/"
+  base: "http://ostholstein.freifunk.net/firmware/"
   type: "gluon"
 
   # URL to the site repo (gitweb,github...)
