@@ -29,7 +29,7 @@ community:
   geo_lon: 10.79681396484375
 
 firmware:
-  base: "http://ostholstein.freifunk.net/firmware/"
+  base: "http://ostholstein.freifunk.net/firmware/experimental/"
   type: "gluon"
 
   # URL to the site repo (gitweb,github...)

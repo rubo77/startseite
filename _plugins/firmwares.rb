@@ -3,8 +3,8 @@ require 'uri'
 require 'nokogiri'
 require 'pp'
 
-FIRMWARE_REGEX = /^gluon-((\w+)-([\d\.]+)-([\w-]+))(\.0)*\.bin$/
-HWREV_REGEX = /^(.+)-(v|rev-)([\w\.]+)$/
+FIRMWARE_REGEX = /^gluon-((\w+)-([\d\.~+]+)-([\w-]+))(\.0)*\.bin$/
+HWREV_REGEX = /^(.+)-(v|rev-)([\w\.~+]+)$/
 
 MODELMAP = {
   "buffalo-wzr-hp-ag300h-wzr-600dhp"         => { :make => "Buffalo", :model => "WZR-HP-AG300H/600DHP" },
@@ -115,6 +115,8 @@ module Jekyll
           factory.each do |href|
             fw = Firmware.new
             fw.factory = firmware_base + "factory/" + href
+
+            print "Interpreting %s\n", href
 
             href.match(FIRMWARE_REGEX) do |m|
               fw.basename = m[1]

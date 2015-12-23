@@ -18,8 +18,10 @@ layout: base
 
 <div class="row">
   <div class="eight columns">
+  SteffenB
     {% for make in page.makes %}
     <h2>{{ make[0] }}</h2>
+  SteffenC
     <table class="firmwarelist">
       <thead>
         <tr>
@@ -29,6 +31,7 @@ layout: base
         </tr>
       </thead>
       <tbody>
+	<tr><td>a<td></td><td>c</td></tr>
         {% for model in make[1] %}
         <tr>
           <td>
