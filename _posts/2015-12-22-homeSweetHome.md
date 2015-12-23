@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Der Verein hat nun ein Zuhause

@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Wir sind nun ein eingetragener Verein!
