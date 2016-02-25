@@ -1,7 +1,11 @@
-ffnord startseite
-=================
+Startseite der Community Ostholstein
+====================================
 
-Generic Homepage for FreiFunk Nord.
+Webseite: http://ostholstein.freifunk.net
+
+Um einen Blog Beitrag zu erstellen brauchst du keine weitere Software. Das Blog kannst du **direkt im Browser [hier auf Github](https://github.com/ deine community hier /_posts) bearbeiten**. 
+
+Um die Hauptseiten zu bearbeiten, clone dises Repository und installiere ein paar Abhängigkeiten, dann kannst du auch bei dir lokal eine Kopie erstellen und testen:
 
 Dependencies
 ------------
@@ -21,11 +25,13 @@ On Ubuntu/Debian:
 
 Customization
 -------------
-Fill out `_config.yml` and you should customize the text in the following files:
+Customize the text/configuration in the following files:
 
- * treffen.html
- * mitmachen.html
- * distributor.html
+ * `_config.yml`
+ * `treffen.html`
+ * `mitmachen.html`
+ * `distributor.html`
+ * `_plugins/firmwares.rb`
 
 Before you deploy the included `impressum.html` please contact
 the "Förderverein Freie Netzwerke e. V." and ask for their
@@ -58,15 +64,40 @@ Site
 The site doesn't run in a subdirectory, it only works correctly if it is
 called via its own (sub)domain, so you have to configure your webserver to
 route a domain on the site-path, otherwise the links to stylesheets, images,..
-are not implemented correctly, for example in apache add this to your
-sites-enabled:
+are not implemented correctly.
+
+Example Configurations
+----------------------
+
+# Apache 2
+
+Add this to your `/etc/apache2/sites-enabled/`:
 
 	<VirtualHost *:80>
 		ServerName freifunk.localhost
-		DocumentRoot /path/to/www/
+		DocumentRoot /path/to/www
 	</VirtualHost>
 
-Or just start a SimpleHTTPServer with python:
+# nginx
+
+	server {
+	    listen   80;
+	    server_name freifunk.localhost fflocal;
+		root /path/to/www;
+		index index.html index.php;
+
+		location / {
+			try_files $uri $uri/ =404;
+		}
+		location ~ /\.ht {
+			deny all;
+		}
+	}
+
+
+# SimpleHTTPServer
+
+For development, you can just start a SimpleHTTPServer with python:
 
     cd build 
     python -m SimpleHTTPServer 8000
@@ -80,6 +111,7 @@ Aftermath
 There are several bits and pieces still missing after the installation of this
 startseite:
 
- * map/graph/List from the ffnord/ffmap-d3 repository on github
+ * [meshviewer](https://github.com/ffnord/meshviewer) or [HopGlass](https://github.com/plumpudding/hopglass) from github
  * integration of the www-providing machine with the batman-adv mesh
  * mailing lists and email setup in general
+ * optionally exclude the blog in an external repository like in Freifunk Nord or customize this completely so the Community can add blog articles more easily
