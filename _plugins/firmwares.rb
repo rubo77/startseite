@@ -4,12 +4,13 @@ require 'nokogiri'
 require 'pp'
 
 ######### Configuration ##############
-COMMUNITY_TLD = 'ffki'
-FIRMWARE_VERSION = '0.7.1'
-FIRMWARE_BASE = 'http://freifunk.in-kiel.de/' + COMMUNITY_TLD + '-firmware/latest/'
-FIRMWARE_MIRROR = 'http://freifunk.discovibration.de/firmware/firmware-0.7.1/'
+COMMUNITY_TLD = 'ffoh'
+FIRMWARE_VERSION = '0.8~exp20150818'
+FIRMWARE_BASE = 'http://ostholstein.freifunk.net/firmware/experimental/'
+#FIRMWARE_BASE = 'http://freifunk.in-kiel.de/' + COMMUNITY_TLD + '-firmware/latest/'
+#FIRMWARE_MIRROR = 'http://freifunk.discovibration.de/firmware/firmware-0.7.1/'
 ######################################
-
+#gluon-ffoh-0.8~exp20150811-tp-link-tl-wdr4900-v1-sysupgrade.bin
 FIRMWARE_PREFIX = 'gluon-' + COMMUNITY_TLD
 FIRMWARE_REGEX = Regexp.new('^' + FIRMWARE_PREFIX + '-' + FIRMWARE_VERSION + '-')
 
@@ -160,7 +161,7 @@ module Jekyll
           result = super
           result["site"]["firmwares"] = self.firmwares
           result["site"]["firmware_version"] = FIRMWARE_VERSION
-          result["site"]["firmware_mirror"] = FIRMWARE_MIRROR
+#          result["site"]["firmware_mirror"] = FIRMWARE_MIRROR
           result["site"]["community_tld"] = COMMUNITY_TLD
           result
         end

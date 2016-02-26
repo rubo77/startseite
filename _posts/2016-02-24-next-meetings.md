@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title: Termine: Freifunk-Treffen in der Bilderbar
+title: Freifunk-Treffen in der Bilderbar
 ---
 
 Wir treffen uns alle zwei Wochen, abwechselnd Dienstags und Mittwochs
