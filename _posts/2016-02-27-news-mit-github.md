@@ -9,7 +9,7 @@ sind, und die Verteilung von Wissen und Verantwortung eine wesentliche Eigenscha
 darstellt, nutzen wir dieses github.com öfter als andere.  Außerhalb der Software Entwickler hat sich dieses Konzept
 der verteilten Versionskontrolle nocht nicht gar so sehr herumgesprochen, doch, versprochen, jede Firma mit einer
 Dokumentation ihrer Produkte oder Standard Operating Procedures würde so etwas gebrauchen können. Wer das erstmal
-verstanden hat, nutzt diese Methoden auch gerne für sich allein. Also brauchen eigentlich alle.
+verstanden hat, nutzt diese Methoden auch gerne für sich allein. Also brauchen dies eigentlich alle.
 
 Der Freifunk ist mehr als WLAN. Wir lernen gern, helfen unserer Umgebung aber auch genre, sich neuen Entwicklungen
 zu nähern. Wer Nachrichten für den Ostholsteiner Freifunk hat, kann nun bei https://github.com/ffoh/startseite/tree/master/_posts eine
