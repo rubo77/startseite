@@ -6,7 +6,7 @@ title: Freifunk Ostholstein bei meetup.com
 In Hamburg und partiell auch Kiel hat sich meetup.com als Platform
 für die Organisation sich spontan zusammenrottender Communities etabliert.
 Der Freifunk Ostholstein hat dort nun eine eigene Präsenz:
-http://www.meetup.com/Freifunk-Ostholstein/
+<http://www.meetup.com/Freifunk-Ostholstein/>
 
 Hintergedanke hierzu war die Idee, hierüber möglicherweise jemanden finden,
 der in Hamburg arbeitet, dann zwischen 7 und 8 Uhr abends sowieso bei
