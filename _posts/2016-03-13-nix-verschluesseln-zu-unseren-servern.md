@@ -30,3 +30,7 @@ zudem auch über den Inhalt.
 Zusammenfassung: Es wird durch einen Verzicht auf die Verschlüsselung für alle
 schneller, ohne einen Verlust an Informationeller Selbstbestimmung oder einer
 erhöhnten Gefahr von Abmahnungen. Zudem wird eine Schein-Sicherheit vermieden.
+
+Neu konfigurierte Knoten werden mit der 2016er Firmware dann ohne diese
+Verschlüsselung arbeiten. Wir werden an dieser Stelle nachtragen, inwieweit
+bestehende Knoten bei einem automatischen Update von dieser Änderung profitieren.
