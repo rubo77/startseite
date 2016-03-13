@@ -10,7 +10,7 @@ jedoch auch gehörig. Sie ist auch für die wesentlichen Freifunk-Zwecke
 unnötig. Der Vorstand des Freifunk Ostholstein will
 sie daher nicht. Es wird nach Ostern aber noch vor der Hauptsaison deswegen
 eine neue Firmware für den Freifunk Ostholstein geben, bei der diese
-Verschlüsselung ausgeschaltet ist.
+Freifunk-interne Verschlüsselung ausgeschaltet ist.
 
 Zur Begründung: Ab den Servern in Frankfurt geht es jedoch sowieso unverschlüsselt 
 ins Internet. Und die WLAN Übertragung hin zum Freifunk-Router ist auch seit jeher
