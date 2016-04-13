@@ -34,3 +34,6 @@ erhöhnten Gefahr von Abmahnungen. Zudem wird eine Schein-Sicherheit vermieden.
 Neu konfigurierte Knoten werden mit der 2016er Firmware dann ohne diese
 Verschlüsselung arbeiten. Wir werden an dieser Stelle nachtragen, inwieweit
 bestehende Knoten bei einem automatischen Update von dieser Änderung profitieren.
+
+####### Update (14.4.2016):
+Die jüngste Firmware überlässt dem Aufsteller die Wahl, ob verschlüsselt übertragen werden soll. Das ist doch fein.
