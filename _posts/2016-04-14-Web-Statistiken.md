@@ -5,7 +5,7 @@ title: Statistiken für FFOH Webseite
 
 Wir probieren uns an einer Statistik zu den Aufrufen der
 ostholstein.freifunk.net Seiten. Diese ist öffentlich zugänglich auf
-<http://ostholstein.freifunk.net/awstats.html/>.
+<http://ostholstein.freifunk.net/awstats.html>.
 Es läuft uns hier an der Küste ein wenig die Zeit davon. Bald
 ist wieder Hochsaison und was vorher nicht passiert ist, insbesondere
 der eine oder andere Router intstalliert, passiert erst im November wieder.
