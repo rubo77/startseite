@@ -20,15 +20,26 @@ GROUPS = {
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
+  "ALFA" => {
+    models: [
+      "AP121",
+      "AP121U",
+      "Hornet-UB",
+    ],
+    extract_rev: lambda { |model, suffix| nil },
+  },
   "Buffalo" => {
     models: [
-      "WZR-HP-AG300H/WZR-600DHP",
+      "WZR-HP-AG300H",
+      "WZR-600DHP",
+      "WZR-HP-G300NH",
       "WZR-HP-G450H",
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
   "D-Link" => {
     models: [
+      "DIR-505",
       "DIR-615",
       "DIR-825",
     ],
@@ -56,18 +67,26 @@ GROUPS = {
     ],
     extract_rev: lambda { |model, suffix| /^(.*?)(?:-sysupgrade)?\.[^.]+$/.match(suffix)[1].sub(/^$/, 'v1') },
   },
+  "Onion" => {
+    models: [
+      "omega",
+    ],
+    extract_rev: lambda { |model, suffix| nil },
+  },
   "TP-Link" => {
     models: [
       "CPE210",
       "CPE220",
       "CPE510",
       "CPE520",
+      "TL-MR13U",
       "TL-MR3020",
       "TL-MR3040",
       "TL-MR3220",
       "TL-MR3420",
       "TL-WA701N/ND",
       "TL-WA750RE",
+      "TL-WA7510N",
       "TL-WA801N/ND",
       "TL-WA830RE",
       "TL-WA850RE",
@@ -86,12 +105,16 @@ GROUPS = {
       "TL-WR743N/ND",
       "TL-WR841N/ND",
       "TL-WR842N/ND",
+      "TL-WR843N/ND",
+      "TL-WR940N/ND",
       "TL-WR941N/ND",
     ],
     extract_rev: lambda { |model, suffix| /^-(.+?)(?:-sysupgrade)?\.bin$/.match(suffix)[1] },
   },
   "Ubiquiti" => {
     models: [
+      "AirGateway",
+      "AirRouter",
       "Bullet M",
       "Loco M",
       "Nanostation M",
@@ -120,7 +143,23 @@ GROUPS = {
       end
     }
   },
+  "WD" => {
+    models: [
+      "my-net-n600",
+      "my-net-n700",
+    ],
+    extract_rev: lambda { |model, suffix| nil },
+  },
   "x86" => {
+    models: [
+      "Generic",
+      "KVM",
+      "VirtualBox",
+      "VMware",
+    ],
+    extract_rev: lambda { |model, suffix| nil },
+  },
+  "x86-64" => {
     models: [
       "Generic",
       "KVM",
@@ -227,6 +266,10 @@ module Jekyll
 
       factory = get_files(FIRMWARE_BASE + "factory/")
       sysupgrade = get_files(FIRMWARE_BASE + "sysupgrade/")
+
+      @prefixes.each do |prefix|
+         puts "Prefixes: " + prefix
+      end
 
       factory.each do |href|
         basename = find_prefix href
