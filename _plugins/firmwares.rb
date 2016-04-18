@@ -10,7 +10,7 @@ FIRMWARE_BASE = 'http://ostholstein.freifunk.net/firmware/experimental/'
 #FIRMWARE_BASE = 'http://freifunk.in-kiel.de/' + COMMUNITY_TLD + '-firmware/latest/'
 #FIRMWARE_MIRROR = 'http://freifunk.discovibration.de/firmware/firmware-0.7.1/'
 ######################################
-#gluon-ffoh-0.8~exp20150811-tp-link-tl-wdr4900-v1-sysupgrade.bin
+
 FIRMWARE_PREFIX = 'gluon-' + COMMUNITY_TLD
 FIRMWARE_REGEX = Regexp.new('^' + FIRMWARE_PREFIX + '-' + FIRMWARE_VERSION + '-')
 
@@ -268,9 +268,9 @@ module Jekyll
       factory = get_files(FIRMWARE_BASE + "factory/")
       sysupgrade = get_files(FIRMWARE_BASE + "sysupgrade/")
 
-      @prefixes.each do |prefix|
-         puts "Prefixes: " + prefix
-      end
+      #@prefixes.each do |prefix|
+      #   puts "Prefixes: " + prefix
+      #end
 
       factory.each do |href|
         basename = find_prefix href
