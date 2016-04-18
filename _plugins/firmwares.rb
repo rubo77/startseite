@@ -5,7 +5,7 @@ require 'pp'
 
 ######### Configuration ##############
 COMMUNITY_TLD = 'ffoh'
-FIRMWARE_VERSION = '0.8~exp20150818'
+FIRMWARE_VERSION = '0.8~exp20160322'
 FIRMWARE_BASE = 'http://ostholstein.freifunk.net/firmware/experimental/'
 #FIRMWARE_BASE = 'http://freifunk.in-kiel.de/' + COMMUNITY_TLD + '-firmware/latest/'
 #FIRMWARE_MIRROR = 'http://freifunk.discovibration.de/firmware/firmware-0.7.1/'
@@ -148,6 +148,7 @@ GROUPS = {
     models: [
       "my-net-n600",
       "my-net-n700",
+      "my-net-n750",
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
@@ -231,6 +232,7 @@ module Jekyll
       end
 
       def find_prefix(name)
+        puts "Checking prefix for "+name
         @prefixes.each do |prefix|
           return prefix if prefix_of(prefix, name)
         end
@@ -268,9 +270,9 @@ module Jekyll
       factory = get_files(FIRMWARE_BASE + "factory/")
       sysupgrade = get_files(FIRMWARE_BASE + "sysupgrade/")
 
-      #@prefixes.each do |prefix|
-      #   puts "Prefixes: " + prefix
-      #end
+      @prefixes.each do |prefix|
+         puts "Prefixes: " + prefix
+      end
 
       factory.each do |href|
         basename = find_prefix href
