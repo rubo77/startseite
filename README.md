@@ -54,7 +54,7 @@ so it is stored in the folder `_site` inside this repository. If
 something analogous to `rm -r /path/to/www; mv _site /path/to/www` is not
 possible, you may decided for something like
 
-	(cd build && tar cf - .)|(cd /path/to/www && sudo tar xf -)
+	(cd _site && tar cf - .)|(cd /path/to/www && sudo tar xf -)
 
 to have the data transferred without deleting independent contributions.
 
@@ -99,7 +99,7 @@ Add this to your `/etc/apache2/sites-enabled/`:
 
 For development, you can just start a SimpleHTTPServer with python:
 
-    cd build 
+    cd _site/
     python -m SimpleHTTPServer 8000
     
 This will serve the `_site` folder on port http://localhost:8000
