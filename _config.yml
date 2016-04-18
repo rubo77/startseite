@@ -1,51 +1,50 @@
-url: http://gothamcity.freifunk.net/
+url: http://ostholstein.freifunk.net/
 
 community:
   # Metadata
-  name: "Gotham City"
-  meta: "Marvel"
-  country: "MC"
+  name: "Ostholstein"
+  meta: "Schleswig-Holstein"
+  country: "DE"
 
   # Custom URLs
-  url_wiki:  "/wiki"
-  url_geomap: "/map/geomap.html"
-  url_graph: "/map/graph.html"
-  url_nodelist: "/wiki/Knoten"
-  url_mailman: "http://lists.gothamcity.freifunk.net/mailman/listinfo/list"
+  url_wiki:  "http://luebeck.freifunk.net/wiki/Ostholstein"
+  url_geomap: "/map2"
+  url_graph: "/map2"
+  url_nodelist: "/map2"
+  url_mailman: "http://lists.ostholstein.freifunk.net/mailman/listinfo/list"
+  url_logo: "/images/ffoh-logo.png"
 
   # Mail Contacts
-  mail_info: "info@gothamcity.freifunk.net"
-  mail_keys: "keys@gothamcity.freifunk.net"
-  mail_discussion: "discussion@gothamcity.freifunk.net"
+  mail_info: "info@ostholstein.freifunk.net"
+  mail_keys: "keys@ostholstein.freifunk.net"
+  #mail_discussion: "discussion@ostholstein.freifunk.net"
 
   # Other Contacts
-  sip: ["space@sip.ffgc", "space@10.35.0.1"] # Optional
-  twitter: "FreiFunkGothamCity" # Optional
-  irc: "ircs://irc.hackint.net/ffgc"
+  #sip: ["space@sip.ffoh", "space@10.254.254.254"] # Optional
+  #twitter: "FreifunkOstholstein" # Optional
+  #irc: "#ffoh"
 
   # GPS
-  geo_lat: 40.5
-  geo_lon: -74.1
+  geo_lat: 54.010162934330765 
+  geo_lon: 10.79681396484375
 
-firmware: # something like http://gothamcity.freifunk.net/firmware/stable/
-  base: "http://add URL to your firmware here/"
+firmware:
+  base: "http://ostholstein.freifunk.net/firmware/experimental/"
   type: "gluon"
 
   # URL to the site repo (gitweb,github...)
-  gluon_site: "https://github.com/freifunk-gothamcity/site-ffgc"
+  gluon_site: "https://github.com/smoe/site-ffoh"
   # Path to local checkout of the site repo
   gluon_site_dir: "../gluon/site"
 
 tld:
-  label: "ffgc"
+  label: "ffoh"
   ns:
-    - "10.35.0.1"
-    - "fd35:f308:a922::ff00"
-    - "10.35.5.1"
-    - "fd35:f308:a922::ff01"
-    - "10.35.10.1"
-    - "fd35:f308:a922::ff02"
-    - "10.35.15.1"
-    - "fd35:f308:a922::ff03"
-    - "10.35.20.1"
-    - "fd35:f308:a922::ff04"
+    - "10.135.0.8"
+    - "fd73:111:e824::1:1"
+    - "10.135.0.16"
+    - "fd73:111:e824::1:2"
+    - "10.135.0.24"
+    - "fd73:111:e824::1:3"
+    - "10.135.0.32"
+    - "fd73:111:e824::1:4"
