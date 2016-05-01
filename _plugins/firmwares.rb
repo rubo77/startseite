@@ -5,7 +5,8 @@ require 'pp'
 
 ######### Configuration ##############
 COMMUNITY_TLD = 'ffoh'
-FIRMWARE_VERSION = '0.8~exp20160322'
+#FIRMWARE_VERSION = '0.8~exp20160322'
+FIRMWARE_VERSION = '0.8.1'
 FIRMWARE_BASE = 'http://ostholstein.freifunk.net/firmware/experimental/'
 #FIRMWARE_BASE = 'http://freifunk.in-kiel.de/' + COMMUNITY_TLD + '-firmware/latest/'
 #FIRMWARE_MIRROR = 'http://freifunk.discovibration.de/firmware/firmware-0.7.1/'
