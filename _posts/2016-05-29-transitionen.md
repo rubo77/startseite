@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Alles neu: Gateway, Fimware, Protokoll, Karte
+title: "Alles neu: Gateway, Fimware, Protokoll, Karte"
 ---
 
 Der Freifunk Ostholstein hat seit wenigen Wochen einen weiteren Server.
