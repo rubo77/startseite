@@ -22,10 +22,10 @@ wie ein Netzausfall. Für die Teilnehmer ändert sich aber nichts.
 
 Wir wurden gewisserweise bereits auf dieses Szenario vorbereitet: Der Rechner
 mit der Karte läuft mit dem noch aktuellen Protkoll kann die Knoten mit dem neuen Protokoll nicht sehen.
-Daher gibt es nun als Zwischenlösung eine zweite Karte auf http://gw6.ffoh.de/meshviewer. Man 
+Daher gibt es nun als Zwischenlösung eine zweite Karte auf <http://gw6.ffoh.de/meshviewer>. Man 
 kann gut erkennen, wie leer es dort noch ist. Man teilt sich damit daher auch
 die Bandbreite mit kaum jemanden. Und die Bandbreite ist auch noch größer als
 die im bisherigen System. Wer Interesse hat, spreche uns bitte an und update
-mit einer Firmware auf http://gw6.ffoh.de/firmware/v15all_6.1.5/images/sysupgrade/.
+mit einer Firmware auf <http://gw6.ffoh.de/firmware/v15all_6.1.5/images/sysupgrade/>.
 Es scheint, als können die Einstellungen beim Flashen erhalten bleiben. Aber solche Dinge möchten
 wir erst noch vermehrt testen, bevor wir das Update für alle vorbereiten können.
