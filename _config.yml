@@ -8,9 +8,10 @@ community:
 
   # Custom URLs
   url_wiki:  "http://luebeck.freifunk.net/wiki/Ostholstein"
-  url_geomap: "/map2"
-  url_graph: "/map2"
-  url_nodelist: "/map2"
+  #url_webchat: "https://riot.eclabs.de/#/room/#hackint_#ffnord:matrix.eclabs.de"
+  url_geomap: "/map2/geomap.html"
+  url_graph: "/map2/graph.html"
+  url_nodelist: "/map2/nodes.list"
   url_mailman: "http://lists.ostholstein.freifunk.net/mailman/listinfo/list"
   url_logo: "/images/ffoh-logo.png"
 

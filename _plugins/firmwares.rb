@@ -8,7 +8,6 @@ COMMUNITY_TLD = 'ffoh'
 #FIRMWARE_VERSION = '0.8~exp20160322'
 FIRMWARE_VERSION = '0.8.1'
 FIRMWARE_BASE = 'http://ostholstein.freifunk.net/firmware/experimental/'
-#FIRMWARE_BASE = 'http://freifunk.in-kiel.de/' + COMMUNITY_TLD + '-firmware/latest/'
 #FIRMWARE_MIRROR = 'http://freifunk.discovibration.de/firmware/firmware-0.7.1/'
 ######################################
 
@@ -16,6 +15,20 @@ FIRMWARE_PREFIX = 'gluon-' + COMMUNITY_TLD
 FIRMWARE_REGEX = Regexp.new('^' + FIRMWARE_PREFIX + '-' + FIRMWARE_VERSION + '-')
 
 GROUPS = {
+  "8Devices" => {
+    models: [
+      "Carambola2-Board",
+    ],
+    extract_rev: lambda { |model, suffix| nil },
+  },
+  "Alfa" => {
+    models: [
+      "AP121",
+      "AP121U",
+      "Hornet-UB",
+    ],
+    extract_rev: lambda { |model, suffix| nil },
+  },
   "Allnet" => {
     models: [
       "ALL0315N"
@@ -32,8 +45,8 @@ GROUPS = {
   },
   "Buffalo" => {
     models: [
-      "WZR-HP-AG300H",
       "WZR-600DHP",
+      "WZR-HP-AG300H",
       "WZR-HP-G300NH",
       "WZR-HP-G450H",
     ],
@@ -60,6 +73,15 @@ GROUPS = {
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
+  "Meraki" => {
+    models: [
+      "mr12",
+      "mr16",
+      "mr62",
+      "mr66",
+    ],
+    extract_rev: lambda { |model, suffix| nil },
+  },
   "NETGEAR" => {
     models: [
       "WNDR3700",
@@ -71,12 +93,26 @@ GROUPS = {
   },
   "Onion" => {
     models: [
-      "omega",
+      "Omega",
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
+  "OpenMesh" => {
+    models: [
+      "MR600",
+      "MR900",
+      "OM2P",
+      "OM2P-HS",
+      "OM2P-LC",
+      "OM5P",
+      "OM5P-AN",
+    ],
+    extract_rev: lambda { |model, suffix| /^(.*?)(?:-sysupgrade)?\.[^.]+$/.match(suffix)[1].sub(/^$/, 'v1') },
+  },
   "TP-Link" => {
     models: [
+      "ARCHER-C5",
+      "ARCHER-C7",
       "CPE210",
       "CPE220",
       "CPE510",
@@ -115,29 +151,37 @@ GROUPS = {
   },
   "Ubiquiti" => {
     models: [
-      "AirGateway",
-      "AirRouter",
-      "Bullet M",
+      "Airgateway",
+      "Airrouter",
       "Loco M",
+      "Nanostation-Loco M2",
+      "Nanostation-Loco M5",
+      "Bullet M",
+      "LS-SR71", #LiteStation-SR71
       "Nanostation M",
+      "Nanostation M5",
+      "Picostation M",
+      "Rocket M",
+      "Rocket M XW",
       "UniFi AP Pro",
       "UniFi",
       "UniFiAP Outdoor",
-      "Picostation M",
-      "Rocket M",
     ],
     extract_rev: lambda { |model, suffix|
       rev = /^(.*?)(?:-sysupgrade)?\.bin$/.match(suffix)[1]
 
       if rev == '-xw'
         'XW'
-      elsif model == 'Nanostation M' or model == 'Loco M' or model == 'Bullet M'
+      elsif model == 'Nanostation M' or model == 'Nanostation-Loco M' or model == 'Bullet M'
         'XM'
       else
         nil
       end
     },
     transform_label: lambda { |model|
+      #if model == 'Bullet M' then
+      #  'Bullet M, Loco M'
+      #els
       if model == 'UniFi' then
         'UniFi AP (LR)'
       else
@@ -145,20 +189,24 @@ GROUPS = {
       end
     }
   },
-  "WD" => {
+  "wd-my-net" => {
     models: [
-      "my-net-n600",
-      "my-net-n700",
-      "my-net-n750",
+      "N600",
+      "N750",
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
   "x86" => {
     models: [
+      "64",
       "Generic",
       "KVM",
       "VirtualBox",
       "VMware",
+      "64-VirtualBox",
+      "64-VMware",
+      "xen",
+      "x86-64",
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
@@ -210,6 +258,7 @@ module Jekyll
 
       def get_files(url)
         uri = URI.parse(url)
+        puts ("load firmware from " + url)
         response = Net::HTTP.get_response uri
         doc = Nokogiri::HTML(response.body)
         doc.css('a').map do |link|
@@ -312,7 +361,7 @@ module Jekyll
       groups = firmwares
                .collect { |k, v| v[:revisions] }
                .group_by { |revs| revs.values.first.label }
-               .collect { |k, v| [k, v.first.sort] }
+               .collect { |k, v| [k, v.first] }
                .sort
                .group_by { |k, v| v.first[1].group }
                .to_a

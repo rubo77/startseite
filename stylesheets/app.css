@@ -48,10 +48,6 @@ div.header {
   }
 }
 
-.firmwarelist {
-	min-width:90%;
-}
-
 footer {
   background: #fafafa;
   margin-top: 1em;
@@ -79,15 +75,34 @@ h1 > .postdate {
   font-style: italic;
 }
 
+.entry-content li{
+  margin-left: 2em;
+  text-indent: -1em; 
+}
 /* -----------------------------------------
-   Page Name 1
+   Firmware
 ----------------------------------------- */
 
+.router{
+  padding: 0px;
+  text-align: center;
+  width:70px;
+  height: 60px;    
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #eeeeee;
+  background-color: white;
+}
+.infolink{
+  font-size: 0.8em;
+  padding-left: 7px;
+}
 
+.firmwarelist {
+  min-width:90%;
+}
 
-
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
-
-
+#firmware-info-box a{
+  font-size: 12px;
+  word-wrap: break-word;
+}
