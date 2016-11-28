@@ -48,7 +48,7 @@
         <li><a href="/firmware.html">Firmware</a></li>
         <li><a href="/treffen.html">Treffen</a></li>
         <li><a href="{{ site.community.url_wiki }}">Wiki</a></li>
-        <li><a href="https://vector.eclabs.de/#/room/#hackint_#ffnord:matrix.eclabs.de" target="_blank">Webchat</a></li>
+        <li><a href="{{ site.community.url_webchat }}" target="_blank">Webchat</a></li>
         <li><a href="https://forum.freifunk.net/c/meta-community/ffnord" target="_blank">Forum</a></li>
       </ul>
     </div>
@@ -71,7 +71,7 @@
             {% for sip in site.community.sip %}
             {{ sip }}{% if forloop.rindex > 2 %}, {% else %}{%if forloop.rindex == 2%} oder {% endif %}{% endif %}{% endfor %} <br/>
           {% endif %}
-          <strong>IRC:</strong> {{ site.community.irc }} im <a href="http://hackint.org">hackint</a> | <a href="https://vector.eclabs.de/#/room/#hackint_#ffnord:matrix.eclabs.de">Live Webchat</a><br/>
+          <strong>IRC:</strong> {{ site.community.irc }} im <a href="http://hackint.org">hackint</a> | <a href="{{ site.community.url_webchat }}">Live Webchat</a><br/>
           {% if site.community contains 'twitter' %}
           <strong>Twitter:</strong> <a href="https://twitter.com/{{ site.community.twitter }}">@{{ site.community.twitter }}</a><br/>
           {% endif %}
@@ -84,10 +84,11 @@
           <li><a href="{{ site.community.url_wiki }}">Wiki</a></li>
 <!--          <li><a href="{{ site.community.url_nodelist }}">Knotenliste</a></li>
           <li><a href="{{ site.community.url_graph }}">Netzgraph</a></li> -->
-          <li><a href="{{ site.community.url_geomap }}">Knotenkarte v14</a> (aktuell)</li>
-          <li><a href="http://gw6.ffoh.de/meshviewer">Knotenkarte v15</a> (bald)</li>
+          <li><a href="{{ site.community.url_geomap }}">Knotenkarte v14</a> (legacy)</li>
+          <li><a href="http://gw6.ffoh.de/meshviewer">Knotenkarte v15</a> (aktuell)</li>
           <li><a href="awstats.html">Aufrufstatistiken</a> 
                        <small></small>(<a href="https://majestic.com/reports/site-explorer?q=ostholstein.freifunk.net">majestic</a>, <a href="http://openlinkprofiler.org/r/ostholstein.freifunk.net">openlinkprofiler</a>, <a href="https://www.google.de/search?q=site&q=link:+%22ostholstein.freifunk.net%22">google</a>)</small></li>
+          <li><a href="/nutzungsbedingungen.html">Nutzungsbedingungen</a></li>
         </ul>
       </div>
       <div class="four columns">
