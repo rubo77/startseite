@@ -2,10 +2,7 @@
 layout: post
 title: "Upgrade alter Router dringend erbeten"
 ---
-
-Hallo,
-
-einige Freifunker haben das Autoupdate nicht aktiviert,
+Hallo, einige Freifunker haben das Autoupdate nicht aktiviert,
 updaten ihre Router aber auch nicht. Das letzte Update
 scheint der Stabilität des Netzes zuträglich gewesen zu
 sein. Daher fordern wir alle auf, auf die Firmware mit
