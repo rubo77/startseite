@@ -9,8 +9,8 @@ community:
   # Custom URLs
   url_wiki:  "http://luebeck.freifunk.net/wiki/Ostholstein"
   url_webchat: "https://riot.eclabs.de/#/room/#ffoh:matrix.eclabs.de"
-  url_geomap: "/map2/"
-  url_graph: "/map2/graph.html"
+  url_geomap: "https://coco.ffoh.de/meshviewer/"
+  url_graph: "https://coco.ffoh.de/meshviewer/"
   url_nodelist: "/map2/nodes.list"
   url_mailman: "http://lists.ostholstein.freifunk.net/mailman/listinfo/list"
   url_logo: "/images/ffoh-logo.png"
@@ -36,7 +36,7 @@ firmware:
   # URL to the site repo (gitweb,github...)
   gluon_site: "https://github.com/ffoh/site-ffoh"
   # Path to local checkout of the site repo
-  gluon_site_dir: "../gluon/site"
+  gluon_site_dir: "../site-ffoh"
 
 tld:
   label: "ffoh"
