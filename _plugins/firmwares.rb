@@ -10,7 +10,7 @@ COMMUNITY_TLD = 'ffoh'
 #FIRMWARE_VERSION = '0.8.5~exp20170223'
 #FIRMWARE_VERSION = '0.9.3~exp20171031'
 #FIRMWARE_VERSION = '0.9.4~exp20180113'
-FIRMWARE_VERSION = '0.9.8~exp20180618'
+FIRMWARE_VERSION = '0.9.8~exp20180617'
 FIRMWARE_BASE = 'http://ostholstein.freifunk.net/firmware/experimental/'
 #FIRMWARE_MIRROR = 'http://freifunk.discovibration.de/firmware/firmware-0.7.1/'
 ######################################
