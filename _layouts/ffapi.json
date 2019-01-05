@@ -1,60 +1,84 @@
 {
   "name": "Freifunk Ostholstein",
-  "url": "http://ostholstein.freifunk.net/",
-  "metacommunity": "Schleswig-Holstein", 
-  "state": {
-    "nodes": 95,
-    "lastchange": "2015-03-24T10:01:34+01:00"
-  },
+  "url": "https://ostholstein.freifunk.net",
   "location": {
     "city": "Ostholstein",
     "country": "DE",
     "lat": 54.010162934330765,
-    "lon": 10.79681396484375
+    "lon": 10.74671396484375
   },
   "contact": {
-    "email": "info@ostholstein.freifunk.net",
-    "ml": "discussion@luebeck.freifunk.net"
+    "email": "info@ostholstein.freifunk.net"
   },
-  "nodeMaps": [
+  "state": {
+    "nodes": 328,
+    "description": "Freifunk ist ein Projekt, über das Menschen wie du und ich ein stadtweites drahtloses Datennetz aufbauen. Das Netz soll die freie Kommunikation innerhalb der ganzen Stadt und, mithilfe von Links zu anderen Städten, auch überregional ermöglichen. Um dies zu erreichen, werden sogenannte Freifunkknoten - das sind Router mit den Antennen, ähnlich denen, die du von anderen drahtlosen Internetzugängen schon kennst - von Freiwilligen an vielen Orten in der Stadt betrieben. Jedes WLAN-fähige Gerät, also beispielsweise Handy oder Notebook, kann sich in der Nähe eines solchen Knotens mit dem Netz verbinden und darüber mit anderen Teilnehmern kommunizieren. Auch ein Zugang ins Internet steht meistens zur Verfügung.",
+    "focus": [
+      "infrastructure/backbone",
+      "Public Free Wifi",
+      "Social Community Building",
+      "Free internet access"
+    ],
+    "lastchange": "2019-01-05T01:19:14.304Z"
+  },
+  "services": [
     {
-      "url": "http://ostholstein.freifunk.net/map/geomap.html",
-      "interval": "1800",
-      "technicalType": "ffmap",
-      "mapType": "geographical"
+      "serviceName": "Knoten",
+      "serviceDescription": "Knoten mit dem du gerade verbunden bist",
+      "internalUri": "http://node.ffoh/"
     },
     {
-      "url": "http://ostholstein.freifunk.net/map/graph.html",
-      "interval": "1800",
-      "technicalType": "ffmap",
-      "mapType": "structural"
+      "serviceName": "Knotenkarte",
+      "serviceDescription": "Zugangspunkte",
+      "externalUri": "https://coco.ffoh.de/meshviewer/"
     },
     {
-      "url": "http://ostholstein.freifunk.net/map/list.html",
-      "interval": "1800",
-      "technicalType": "ffmap",
-      "mapType": "list/status"
+      "serviceName": "NTP",
+      "serviceDescription": "Zeitsynchronisation",
+      "internalUri": "ntp://1.ntp.services.ffoh/"
+    },
+    {
+      "serviceName": "Updates",
+      "serviceDescription": "Firmware für die Knoten",
+      "externalUri": "https://ostholstein.freifunk.net/firmware/",
+      "internalUri": "http://1.updates.services.ffoh/firmware/"
     }
   ],
+  "nodeMaps": [
+    {
+      "url": "https://coco.ffoh.de/meshviewer/#!/de/map",
+      "interval": "120",
+      "technicalType": "hopglass",
+      "mapType": "geographical"
+    }
+  ],
+  "support": {
+    "donations": {
+      "bankaccount": {
+        "IBAN": "DE81 7002 2200 0020 1472 37",
+        "BIC": "FDDODEMMXXX",
+        "usage": "Freifunk Kiel"
+      }
+    }
+  },
   "techDetails": {
     "firmware": {
-      "url": "http://ostholstein.freifunk.net/mitmachen.html",
-      "name": "gluon"
+      "name": "Gluon",
+      "url": "https://ostholstein.freifunk.net/firmware.html",
+      "vpnaccess": "mail"
     },
     "dns": [
-        {
-           "domainname": "ffoh",
-           "nameserver": [
-            "10.135.0.8",
-            "fd73:111:e824::1:1",
-            "10.135.0.16",
-            "fd73:111:e824::1:2",
-            "10.135.0.24",
-            "fd73:111:e824::1:3",
-            "10.135.0.32",
-            "fd73:111:e824::1:4"
-           ] 
-        } 
+      {
+        "domainname": "ffoh",
+        "nameserver": [
+          "gw1.ffoh",
+          "gw2.ffoh",
+          "gw3.ffoh",
+          "gw4.ffoh",
+          "gw5.ffoh",
+          "gw6.ffoh"
+        ]
+      }
     ],
     "networks": {
       "ipv6": [
@@ -68,18 +92,15 @@
         }
       ]
     },
-    "bootstrap": "", 
     "routing": [
       "batman-adv"
     ],
     "updatemode": [
-      "manual",
       "autoupdate"
     ],
     "legals": [
-      "vpninternational",
-      "anonymizer"
+      "vpnnational"
     ]
   },
-  "api": "0.4.6"
+  "api": "0.4.14"
 }
