@@ -52,15 +52,6 @@
       "mapType": "geographical"
     }
   ],
-  "support": {
-    "donations": {
-      "bankaccount": {
-        "IBAN": "DE81 7002 2200 0020 1472 37",
-        "BIC": "FDDODEMMXXX",
-        "usage": "Freifunk Kiel"
-      }
-    }
-  },
   "techDetails": {
     "firmware": {
       "name": "Gluon",
