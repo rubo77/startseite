@@ -2,14 +2,15 @@
   "name": "Freifunk Ostholstein",
   "url": "https://ostholstein.freifunk.net",
   "location": {
-    "city": "Ostholstein",
+    "city": "Timmendorfer Strand",
     "country": "DE",
-    "lat": 54.010162934330765,
-    "lon": 10.74671396484375
+    "lat": 53.9984486,
+    "lon": 10.780666
   },
   "contact": {
     "email": "info@ostholstein.freifunk.net"
   },
+  "metacommunity": "Freifunk Ostholstein",
   "state": {
     "nodes": 328,
     "description": "Freifunk ist ein Projekt, über das Menschen wie du und ich ein stadtweites drahtloses Datennetz aufbauen. Das Netz soll die freie Kommunikation innerhalb der ganzen Stadt und, mithilfe von Links zu anderen Städten, auch überregional ermöglichen. Um dies zu erreichen, werden sogenannte Freifunkknoten - das sind Router mit den Antennen, ähnlich denen, die du von anderen drahtlosen Internetzugängen schon kennst - von Freiwilligen an vielen Orten in der Stadt betrieben. Jedes WLAN-fähige Gerät, also beispielsweise Handy oder Notebook, kann sich in der Nähe eines solchen Knotens mit dem Netz verbinden und darüber mit anderen Teilnehmern kommunizieren. Auch ein Zugang ins Internet steht meistens zur Verfügung.",
@@ -17,9 +18,10 @@
       "infrastructure/backbone",
       "Public Free Wifi",
       "Social Community Building",
+      "Local services and content",
       "Free internet access"
     ],
-    "lastchange": "2019-01-05T01:19:14.304Z"
+    "lastchange": "2019-01-05T12:04:54.043Z"
   },
   "services": [
     {
@@ -46,9 +48,9 @@
   ],
   "nodeMaps": [
     {
-      "url": "https://coco.ffoh.de/meshviewer/#!/de/map",
+      "url": "https://coco.ffoh.de/meshviewer/",
       "interval": "120",
-      "technicalType": "hopglass",
+      "technicalType": "meshviewer",
       "mapType": "geographical"
     }
   ],
