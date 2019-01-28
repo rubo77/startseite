@@ -1,5 +1,8 @@
 #!/usr/bin/ruby
 
+# error handling for "undefined method `[]' for nil:NilClass (NoMethodError)" with
+# jekyll build --trace
+
 require 'net/http'
 require 'uri'
 require 'nokogiri'
@@ -21,6 +24,11 @@ FIRMWARE_BASE = 'http://ostholstein.freifunk.net/firmware/experimental/'
 FIRMWARE_PREFIX = 'gluon-' + COMMUNITY_TLD
 FIRMWARE_REGEX = Regexp.new('^' + FIRMWARE_PREFIX + '-' + FIRMWARE_VERSION + '-')
 
+# {} ist ein hash
+# [] ist ein array
+# foo: weist den key :foo im hash zu
+# "foo" => ist äquivalent mit foo: aber kann auch sonderzeichen enthalten (das ganze aber erst in zukunft, ab ruby 2.3)
+# lambda ist eine spezielle anonyme funktion
 GROUPS = {
   "8Devices" => {
     models: [
@@ -51,19 +59,12 @@ GROUPS = {
       "Network-AP121U",
       "Network-Hornet-UB"
     ],
+    #FIXME: alfa-networks to alfa in OpenWRT Wiki info links and Router node pictures
     extract_rev: lambda { |model, suffix| nil },
   },
   "Allnet" => {
     models: [
-      "ALL0315N"
-    ],
-    extract_rev: lambda { |model, suffix| nil },
-  },
-  "ALFA" => {
-    models: [
-      "AP121",
-      "AP121U",
-      "Hornet-UB",
+      "ALL0315N",
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
@@ -223,6 +224,7 @@ GROUPS = {
       "TL-WR940N/ND",
       "TL-WR941N/ND",
     ],
+    #            lambda macht nur, dass es jedes mal ausgeführt wird
     extract_rev: lambda { |model, suffix| rev = /^(?:-(?!sysupgrade)(.+?))?(?:-sysupgrade)?\.bin$/.match(suffix)[1] },
   },
   "Ubnt" => {
@@ -232,6 +234,7 @@ GROUPS = {
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
+
   "Ubiquiti" => {
     models: [
       "Airgateway",
@@ -278,16 +281,13 @@ GROUPS = {
         nil
       end
     },
-#    transform_label: lambda { |model|
-      #if model == 'Bullet M' then
-      #  'Bullet M, Loco M'
-      #els
-#     if model == 'UniFi' then
-#        'UniFi AP (LR)'
-#      else
-#        model
-#      end
-#    }
+    # transform_label: lambda { |model|
+    #   if model == 'UniFi' then
+    #     'UniFi AP (LR)'
+    #   else
+    #     model
+    #   end
+    # },
   },
   "VoCore" => {
     models: [
@@ -295,10 +295,10 @@ GROUPS = {
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
-  "wd-my-net" => {
+  "WD" => {
     models: [
-      "N600",
-      "N750",
+      "My-Net-N600",
+      "My-Net-N750",
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
@@ -326,7 +326,7 @@ GROUPS = {
     ],
     extract_rev: lambda { |model, suffix| nil },
   },
-    "Zyxel" => {
+  "Zyxel" => {
     models: [
       "nbg6716",
     ],
@@ -428,7 +428,9 @@ module Jekyll
         end
       }]
 
-      @prefixes = firmwares.keys.sort_by { |p| p.length }.reverse
+      # sort_by erwartet einen block in dem auf jedes Element eine funktion angewendet wird: .length  
+      #@prefixes = firmwares.keys.sort_by { |p| p.length }.reverse
+      @prefixes = firmwares.keys.sort_by(&:length).reverse
 
       factory = get_files(FIRMWARE_BASE + "factory/")
       sysupgrade = get_files(FIRMWARE_BASE + "sysupgrade/")
@@ -438,6 +440,8 @@ module Jekyll
       end
 
       factory.each do |href|
+	# for debugging:
+	#puts "search " + href
         basename = find_prefix href
         if basename.nil? then
           puts "error in "+href
